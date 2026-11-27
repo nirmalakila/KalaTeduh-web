@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KalaTeduh — Koleksi Hijab Premium & Perlengkapan Ibadah Editorial bernuansa Putih Bersih, Ivory, dan Deep Taupe.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <title>KalaTeduh — Hijab &amp; Perlengkapan Ibadah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* ==========================================================================
+       KalaTeduh Editorial Design System
+       Palet: Putih Bersih (#FFFFFF), Ivory (#FAF7F2), Deep Taupe (#4E4035 / #6B5B4E)
+       ========================================================================== */
+    :root {
+      --bg-white: #FFFFFF;
+      --bg-ivory: #FAF7F2;
+      --bg-ivory-warm: #F4EFE7;
+      --taupe-deep: #4E4035;
+      --taupe-mid: #6B5B4E;
+      --taupe-soft: #CBBBA8;
+      --ink-primary: #2F261F;
+      --ink-secondary: #685A4E;
+      --line-hairline: #E6DDD0;
+    }
+
+    html, body {
+      background-color: var(--bg-white);
+      color: var(--ink-primary);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .bg-pure-white { background-color: var(--bg-white); }
+    .bg-ivory { background-color: var(--bg-ivory); }
+    .bg-ivory-warm { background-color: var(--bg-ivory-warm); }
+    .bg-taupe-deep { background-color: var(--taupe-deep); }
+    .bg-taupe-mid { background-color: var(--taupe-mid); }
+    .text-taupe-deep { color: var(--taupe-deep); }
+    .text-taupe-mid { color: var(--taupe-mid); }
+    .text-ink-secondary { color: var(--ink-secondary); }
+    .border-hairline { border-color: var(--line-hairline); }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-ivory); }
+    ::-webkit-scrollbar-thumb { background: #C8B8A6; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--taupe-deep); }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Marquee Ticker Animation */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 28s linear infinite;
+    }
+    .marquee-wrap:hover .marquee-track {
+      animation-play-state: paused;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+    }
+
+    /* Scroll Reveal Transitions */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-item { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* Tactile Micro-interactions */
+    .tactile-btn {
+      transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .tactile-btn:active {
+      transform: scale(0.96);
+    }
+
+    .card-editorial {
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease, border-color 0.25s ease;
+    }
+    .card-editorial:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 38px -16px rgba(78, 64, 53, 0.18);
+      border-color: var(--taupe-mid);
+    }
+
+    /* Modal Smooth Pop Transition */
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(10px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-animate {
+      animation: modalFadeIn 0.24s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Custom Range Slider */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: var(--bg-ivory-warm);
+      height: 8px;
+      border-radius: 999px;
+      outline: none;
+      border: 1px solid var(--line-hairline);
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--taupe-deep);
+      cursor: pointer;
+      border: 3px solid var(--bg-pure-white);
+      box-shadow: 0 3px 8px rgba(78, 64, 53, 0.28);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
+
+    @keyframes subtleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+    .wa-float {
+      animation: subtleFloat 3.6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-pure-white text-[#2F261F] antialiased selection:bg-[#4E4035] selection:text-white">
+
+  <!-- =====================================================================
+       1. STICKY HEADER, MARQUEE, SEARCH & CATEGORY FILTER
+       ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hairline">
+    <!-- Dynamic Editorial Marquee Ticker -->
+    <div class="marquee-wrap bg-taupe-deep text-[#FAF7F2] py-2 overflow-hidden select-none border-b border-[#3A2E25]">
+      <div class="marquee-track text-xs tracking-wider font-medium">
+        <span class="mx-6">✦ GRATIS ONGKIR SE-JAWA MIN. RP250.000</span>
+        <span class="mx-6">✦ KOLEKSI HIJAB &amp; MUKENA BERBASIS SERAT ALAMI</span>
+        <span class="mx-6">✦ CUSTOM HAMPERS KARTU UCAPAN PERSONAL</span>
+        <span class="mx-6">✦ SIMULASI WARNA KULIT &amp; DRAPE REAL-TIME</span>
+        <span class="mx-6">✦ GRATIS ONGKIR SE-JAWA MIN. RP250.000</span>
+        <span class="mx-6">✦ KOLEKSI HIJAB &amp; MUKENA BERBASIS SERAT ALAMI</span>
+        <span class="mx-6">✦ CUSTOM HAMPERS KARTU UCAPAN PERSONAL</span>
+        <span class="mx-6">✦ SIMULASI WARNA KULIT &amp; DRAPE REAL-TIME</span>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-3">
+        <!-- Brand Logo -->
+        <a href="#beranda" class="flex items-center gap-2.5 shrink-0 focus:outline-none group">
+          <div class="w-9 h-9 rounded-xl bg-taupe-deep text-white flex items-center justify-center shadow-xs group-hover:bg-taupe-mid transition">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-4.5 3-7 7.5-7 11a7 7 0 0014 0c0-3.5-2.5-8-7-11z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v10M9 13c1.5 1 4.5 1 6 0"/>
+            </svg>
+          </div>
+          <div>
+            <span class="font-editorial text-2xl font-bold tracking-tight text-taupe-deep block leading-none">KalaTeduh</span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-taupe-mid block mt-0.5 font-semibold">Editorial Modest</span>
+          </div>
+        </a>
+
+        <!-- Desktop Search -->
+        <div class="hidden md:flex flex-1 max-w-md mx-4 relative">
+          <label for="desktop-search" class="sr-only">Cari produk hijab atau perlengkapan ibadah</label>
+          <input id="desktop-search" type="search" placeholder="Cari pashmina, voal, mukena travel, sajadah..."
+            class="w-full pl-10 pr-4 py-2 rounded-full bg-ivory border border-hairline text-sm text-[#2F261F] placeholder-[#8A7A6B] focus:outline-none focus:border-[#4E4035] focus:bg-white transition">
+          <svg class="w-4 h-4 text-taupe-mid absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-2 sm:gap-2.5">
+          <button id="btn-open-tracking" type="button"
+            class="tactile-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-ivory hover:bg-ivory-warm text-taupe-deep border border-hairline cursor-pointer">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/>
+            </svg>
+            <span class="hidden sm:inline">Lacak Resi</span>
+          </button>
+
+          <button id="btn-open-cart" type="button" aria-label="Buka Keranjang Belanja"
+            class="tactile-btn relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-taupe-deep hover:bg-[#3A2E25] text-white text-xs sm:text-sm font-semibold shadow-xs cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span class="hidden sm:inline">Keranjang</span>
+            <span id="cart-badge" class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-white text-taupe-deep text-xs font-bold">0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Search -->
+      <div class="pb-3 md:hidden relative">
+        <label for="mobile-search" class="sr-only">Cari produk</label>
+        <input id="mobile-search" type="search" placeholder="Cari pashmina, voal, mukena, sajadah..."
+          class="w-full pl-9 pr-4 py-2 rounded-full bg-ivory border border-hairline text-sm text-[#2F261F] placeholder-[#8A7A6B] focus:outline-none focus:border-[#4E4035] focus:bg-white">
+        <svg class="w-4 h-4 text-taupe-mid absolute left-3 top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <nav aria-label="Kategori Produk" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 pt-1">
+        <button type="button" data-category="Semua" class="cat-pill tactile-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-taupe-deep text-white cursor-pointer">Semua</button>
+        <button type="button" data-category="Pashmina" class="cat-pill tactile-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-ivory hover:bg-ivory-warm text-taupe-deep border border-hairline cursor-pointer">Pashmina</button>
+        <button type="button" data-category="Hijab Segi Empat" class="cat-pill tactile-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-ivory hover:bg-ivory-warm text-taupe-deep border border-hairline cursor-pointer">Hijab Segi Empat</button>
+        <button type="button" data-category="Mukena Travel" class="cat-pill tactile-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-ivory hover:bg-ivory-warm text-taupe-deep border border-hairline cursor-pointer">Mukena Travel</button>
+        <button type="button" data-category="Sajadah & Tasbih" class="cat-pill tactile-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-ivory hover:bg-ivory-warm text-taupe-deep border border-hairline cursor-pointer">Sajadah &amp; Tasbih</button>
+        <button type="button" data-category="Hampers" class="cat-pill tactile-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-ivory hover:bg-ivory-warm text-taupe-deep border border-hairline cursor-pointer">Hampers</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =====================================================================
+         2. EDITORIAL HERO WITH PARALLAX ACCENT
+         ===================================================================== -->
+    <section id="beranda" class="relative bg-pure-white border-b border-hairline overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-7 space-y-5 reveal-item">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ivory border border-hairline text-xs font-semibold text-taupe-deep">
+              <span class="w-2 h-2 rounded-full bg-[#4E4035]"></span>
+              Edisi Nominasi Desain Editorial • Putih, Ivory &amp; Deep Taupe
+            </div>
+            <h1 class="font-editorial text-4xl sm:text-5xl lg:text-[4.15rem] font-bold text-taupe-deep leading-[1.06] tracking-tight">
+              Keheningan Serat Alami dalam Gerak yang <span class="italic font-semibold text-taupe-mid">Teduh &amp; Bernyawa.</span>
+            </h1>
+            <p class="text-sm sm:text-base text-ink-secondary max-w-2xl leading-relaxed">
+              KalaTeduh memadukan keanggunan hijab berjatuhan lembut dengan perlengkapan ibadah praktis. Uji kecocokan warna pada kulit, simulasi aliran kain di kanvas interaktif, dan rangkai hampers personal dalam satu pengalaman mulus.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#katalog" class="tactile-btn inline-flex items-center justify-center px-6 py-3 rounded-full bg-taupe-deep hover:bg-[#3A2E25] text-white text-sm font-semibold shadow-sm">
+                Jelajahi Katalog
+              </a>
+              <a href="#fitur-interaktif" class="tactile-btn inline-flex items-center justify-center px-5 py-3 rounded-full bg-ivory hover:bg-ivory-warm text-taupe-deep text-sm font-semibold border border-hairline">
+                Simulasi Warna &amp; Ukuran
+              </a>
+              <button type="button" id="btn-hero-drape" class="tactile-btn inline-flex items-center justify-center px-5 py-3 rounded-full bg-white hover:bg-ivory text-taupe-deep text-sm font-semibold border border-[#4E4035] cursor-pointer">
+                ▶ Kanvas Drape &amp; Tekstur
+              </button>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 pt-5 border-t border-hairline max-w-lg">
+              <div>
+                <p class="font-editorial text-2xl sm:text-3xl font-bold text-taupe-deep">100%</p>
+                <p class="text-xs text-ink-secondary">Serat Adem &amp; Ringan</p>
+              </div>
+              <div>
+                <p class="font-editorial text-2xl sm:text-3xl font-bold text-taupe-deep">4.9 / 5</p>
+                <p class="text-xs text-ink-secondary">Kepuasan Pelanggan</p>
+              </div>
+              <div>
+                <p class="font-editorial text-2xl sm:text-3xl font-bold text-taupe-deep">Instan</p>
+                <p class="text-xs text-ink-secondary">Ongkir &amp; Cek Resi</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parallax Editorial Showcase Card -->
+          <div class="lg:col-span-5 reveal-item">
+            <div id="hero-parallax-card" class="rounded-3xl bg-ivory p-5 sm:p-7 border border-hairline shadow-sm transition-transform duration-200 ease-out">
+              <div class="aspect-[4/3] rounded-2xl bg-pure-white border border-hairline flex flex-col items-center justify-center p-5 relative overflow-hidden">
+                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-ivory text-[11px] font-semibold text-taupe-deep border border-hairline">
+                  Signature Series
+                </span>
+                <svg class="w-44 h-44 sm:w-52 sm:h-52" viewBox="0 0 240 240" fill="none">
+                  <circle cx="120" cy="120" r="94" fill="#FAF7F2" stroke="#E6DDD0" stroke-width="1.5"/>
+                  <path d="M56 184C56 118 82 64 120 64C158 64 184 118 184 184" fill="#E6DDD0"/>
+                  <path d="M72 188C72 130 92 80 120 80C148 80 168 130 168 188" fill="#CBBBA8"/>
+                  <ellipse cx="120" cy="124" rx="29" ry="36" fill="#F2DEC9"/>
+                  <path d="M88 123C88 93 102 77 120 77C138 77 152 93 152 123C144 105 132 97 120 97C108 97 96 105 88 123Z" fill="#4E4035"/>
+                  <path d="M90 129C92 164 110 186 148 193C130 200 95 196 76 182C82 163 86 145 90 129Z" fill="#6B5B4E"/>
+                  <path d="M108 125Q113 122 117 125" stroke="#4E4035" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M123 125Q127 122 132 125" stroke="#4E4035" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M115 141Q120 145 125 141" stroke="#9C7A68" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <p class="font-editorial text-xl font-bold text-taupe-deep mt-2">Voal Ultrafine &amp; Silk Armani</p>
+                <p class="text-xs text-ink-secondary">Tegak di dahi, jatuh mengalir, nyaman seharian</p>
+              </div>
+
+              <div class="mt-4 flex items-center justify-between gap-3 bg-pure-white rounded-2xl p-3.5 border border-hairline">
+                <div>
+                  <p class="text-xs font-bold text-taupe-deep">Butuh rekomendasi kado terkurasi?</p>
+                  <p class="text-[11px] text-ink-secondary">Buat hampers dengan kartu ucapan langsung</p>
+                </div>
+                <a href="#hampers-builder" class="tactile-btn shrink-0 px-3.5 py-2 rounded-xl bg-taupe-deep text-white text-xs font-semibold hover:bg-[#3A2E25]">
+                  Buat Kado
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. KATALOG & KARTU PRODUK TERSTRUKTUR
+         ===================================================================== -->
+    <section id="katalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-pure-white">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 reveal-item">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-taupe-mid">Kurasi Utama</span>
+          <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-taupe-deep mt-1">Katalog KalaTeduh</h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <p id="catalog-count" class="text-xs sm:text-sm text-ink-secondary">Menampilkan 8 produk pilihan</p>
+          <select id="sort-select" aria-label="Urutkan Produk" class="px-3.5 py-2 rounded-xl bg-ivory border border-hairline text-xs sm:text-sm font-medium text-taupe-deep focus:outline-none focus:border-[#4E4035]">
+            <option value="featured">Urutkan: Terpopuler</option>
+            <option value="price-asc">Harga: Terendah</option>
+            <option value="price-desc">Harga: Tertinggi</option>
+            <option value="rating">Rating Tertinggi</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+      <div id="empty-catalog" class="hidden text-center py-14 px-4 rounded-3xl bg-ivory border border-hairline">
+        <p class="font-editorial text-2xl font-bold text-taupe-deep">Produk tidak ditemukan</p>
+        <p class="text-sm text-ink-secondary mt-1">Coba kata kunci lain atau kembalikan filter ke semua kategori.</p>
+        <button type="button" id="btn-reset-filter" class="tactile-btn mt-4 px-5 py-2.5 rounded-full bg-taupe-deep text-white text-xs font-semibold cursor-pointer">
+          Tampilkan Semua Produk
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. COLOR & SKIN TONE MATCHER + SIZE & FIT GUIDE
+         ===================================================================== -->
+    <section id="fitur-interaktif" class="bg-ivory border-y border-hairline py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10 reveal-item">
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-taupe-mid">Studio Interaktif</span>
+          <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-taupe-deep mt-1">Simulasi Warna Kulit &amp; Panduan Ukuran</h2>
+          <p class="text-sm text-ink-secondary mt-2">Uji keserasian rona hijab dengan warna kulit serta sesuaikan ukuran dengan tinggi badanmu.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Color & Skin Tone Matcher -->
+          <div class="rounded-3xl bg-pure-white p-6 sm:p-8 border border-hairline shadow-xs flex flex-col justify-between reveal-item">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <h3 class="font-editorial text-2xl font-bold text-taupe-deep">Color &amp; Skin Tone Matcher</h3>
+                <span class="px-3 py-1 rounded-full bg-ivory text-taupe-deep text-xs font-semibold border border-hairline">Live Preview</span>
+              </div>
+
+              <div class="rounded-2xl bg-ivory border border-hairline p-5 flex flex-col sm:flex-row items-center gap-6 mb-6">
+                <div class="shrink-0 w-36 h-36 rounded-2xl bg-pure-white border border-hairline flex items-center justify-center">
+                  <svg id="matcher-svg" class="w-32 h-32" viewBox="0 0 160 160" fill="none">
+                    <path id="svg-hijab-outer" d="M26 142C26 84 48 34 80 34C112 34 134 84 134 142H26Z" fill="#6B5B4E"/>
+                    <path d="M42 142C42 92 58 48 80 48C102 48 118 92 118 142H42Z" fill="#000000" fill-opacity="0.10"/>
+                    <ellipse id="svg-skin-face" cx="80" cy="86" rx="23" ry="29" fill="#EBC9AD"/>
+                    <path id="svg-skin-neck" d="M68 110H92V126H68V110Z" fill="#EBC9AD"/>
+                    <path id="svg-hijab-wrap" d="M48 92C52 122 72 136 116 142C98 148 56 146 38 136C42 120 45 106 48 92Z" fill="#6B5B4E"/>
+                    <path d="M70 84Q74 81 77 84" stroke="#3B2E25" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M83 84Q86 81 90 84" stroke="#3B2E25" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M76 98Q80 101 84 98" stroke="#9E6E5E" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+
+                <div class="space-y-2 text-center sm:text-left">
+                  <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-taupe-deep text-white text-xs font-semibold">
+                    <span>Kecocokan:</span>
+                    <span id="matcher-score">96% Sangat Serasi</span>
+                  </div>
+                  <p id="matcher-title" class="font-bold text-base text-taupe-deep">Warm Beige × Warm Taupe</p>
+                  <p id="matcher-desc" class="text-xs text-ink-secondary leading-relaxed"></p>
+                </div>
+              </div>
+
+              <div class="mb-5">
+                <p class="text-xs font-bold uppercase tracking-wider text-taupe-mid mb-2.5">1. Pilih Rona Kulit</p>
+                <div id="skin-tone-list" class="grid grid-cols-5 gap-2"></div>
+              </div>
+
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-taupe-mid mb-2.5">2. Pilih Warna Hijab</p>
+                <div id="hijab-shade-list" class="flex flex-wrap gap-2"></div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between gap-2">
+              <span id="matcher-product-hint" class="text-xs text-ink-secondary">Rekomendasi: Pashmina Silk Aluna</span>
+              <button type="button" id="btn-matcher-add" class="tactile-btn px-4 py-2 rounded-full bg-taupe-deep hover:bg-[#3A2E25] text-white text-xs font-semibold cursor-pointer">
+                + Tambah Warna Ini
+              </button>
+            </div>
+          </div>
+
+          <!-- Size & Fit Guide -->
+          <div class="rounded-3xl bg-pure-white p-6 sm:p-8 border border-hairline shadow-xs flex flex-col justify-between reveal-item">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <h3 class="font-editorial text-2xl font-bold text-taupe-deep">Panduan Ukuran &amp; Tinggi Badan</h3>
+                <span class="px-3 py-1 rounded-full bg-ivory text-taupe-deep text-xs font-semibold border border-hairline">Size &amp; Fit</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-ivory border border-hairline mb-5">
+                <div class="flex items-center justify-between mb-2">
+                  <label for="height-slider" class="text-xs font-bold uppercase tracking-wider text-taupe-mid">Tinggi Badan (145–175 cm)</label>
+                  <span id="height-display" class="text-lg font-bold text-taupe-deep">160 cm</span>
+                </div>
+                <input id="height-slider" type="range" min="145" max="175" value="160" class="w-full">
+                <div class="flex justify-between text-[11px] text-ink-secondary mt-1">
+                  <span>145 cm</span>
+                  <span>160 cm</span>
+                  <span>175 cm</span>
+                </div>
+              </div>
+
+              <div class="mb-5">
+                <p class="text-xs font-bold uppercase tracking-wider text-taupe-mid mb-2">Pilih Jenis Produk</p>
+                <div class="grid grid-cols-3 gap-2">
+                  <button type="button" data-fit-model="Pashmina" class="fit-model-btn tactile-btn px-3 py-2.5 rounded-xl bg-taupe-deep text-white text-xs font-semibold cursor-pointer">Pashmina</button>
+                  <button type="button" data-fit-model="Segi Empat" class="fit-model-btn tactile-btn px-3 py-2.5 rounded-xl bg-ivory hover:bg-ivory-warm text-taupe-deep text-xs font-semibold border border-hairline cursor-pointer">Segi Empat</button>
+                  <button type="button" data-fit-model="Mukena" class="fit-model-btn tactile-btn px-3 py-2.5 rounded-xl bg-ivory hover:bg-ivory-warm text-taupe-deep text-xs font-semibold border border-hairline cursor-pointer">Mukena</button>
+                </div>
+              </div>
+
+              <div class="rounded-2xl bg-ivory border border-hairline p-5 flex items-center gap-5">
+                <div class="w-20 h-36 rounded-xl bg-pure-white border border-hairline p-2 flex flex-col items-center justify-end shrink-0">
+                  <div class="w-6 h-6 rounded-full bg-[#CBBBA8] mb-1"></div>
+                  <div id="fit-visual-drape" class="w-12 rounded-t-xl bg-taupe-deep transition-all duration-300 flex items-center justify-center text-[10px] text-white font-semibold" style="height: 68%;">
+                    Fit
+                  </div>
+                  <span id="fit-visual-label" class="text-[10px] text-ink-secondary mt-1">160 cm</span>
+                </div>
+
+                <div class="space-y-2">
+                  <span id="fit-rec-badge" class="inline-block px-3 py-1 rounded-full bg-taupe-deep text-white text-xs font-semibold"></span>
+                  <p id="fit-drop-desc" class="text-xs sm:text-sm font-semibold text-taupe-deep"></p>
+                  <p id="fit-tip-desc" class="text-xs text-ink-secondary leading-relaxed"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-hairline text-xs text-ink-secondary flex items-center justify-between">
+              <span>Toleransi jahit tepi ± 1–2 cm</span>
+              <a href="#katalog" class="font-bold text-taupe-deep underline underline-offset-4">Lihat Katalog</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. CUSTOM HAMPERS / GIFT BOX BUILDER
+         ===================================================================== -->
+    <section id="hampers-builder" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-pure-white">
+      <div class="rounded-3xl bg-ivory border border-hairline p-6 sm:p-10 shadow-xs reveal-item">
+        <div class="max-w-2xl mb-8">
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-taupe-mid">Bingkisan Istimewa</span>
+          <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-taupe-deep mt-1">Custom Hampers &amp; Gift Box Builder</h2>
+          <p class="text-sm text-ink-secondary mt-1.5">Pilih kotak kemasan, 2 hingga 3 isi produk favorit, dan tulis kartu ucapan personal.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="bg-pure-white rounded-2xl p-5 border border-hairline">
+              <h3 class="text-sm font-bold text-taupe-deep mb-3">1. Pilih Jenis Kotak Kemasan</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button type="button" data-box-id="kraft" class="hamper-box-btn tactile-btn text-left p-4 rounded-xl border-2 border-[#4E4035] bg-ivory cursor-pointer">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-sm text-taupe-deep">Box Kraft Pita Taupe</span>
+                    <span class="text-xs font-bold text-taupe-deep">+Rp25.000</span>
+                  </div>
+                  <p class="text-xs text-ink-secondary mt-1">Kemasan kraft rapi beraksen pita deep taupe &amp; tisu lembut.</p>
+                </button>
+                <button type="button" data-box-id="hardbox" class="hamper-box-btn tactile-btn text-left p-4 rounded-xl border border-hairline bg-pure-white hover:bg-ivory cursor-pointer">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-sm text-taupe-deep">Hardbox Ivory Eksklusif</span>
+                    <span class="text-xs font-bold text-taupe-deep">+Rp45.000</span>
+                  </div>
+                  <p class="text-xs text-ink-secondary mt-1">Kotak kaku premium warna ivory dengan detail emboss &amp; hangtag.</p>
+                </button>
+              </div>
+            </div>
+
+            <div class="bg-pure-white rounded-2xl p-5 border border-hairline">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-sm font-bold text-taupe-deep">2. Pilih Isi Hampers (2–3 Item)</h3>
+                <span id="hamper-item-counter" class="text-xs font-bold px-2.5 py-1 rounded-full bg-ivory text-taupe-deep border border-hairline">2 / 3 Dipilih</span>
+              </div>
+              <div id="hamper-items-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+            </div>
+
+            <div class="bg-pure-white rounded-2xl p-5 border border-hairline">
+              <div class="flex items-center justify-between mb-2">
+                <label for="hamper-note" class="text-sm font-bold text-taupe-deep">3. Kartu Ucapan Personal</label>
+                <span id="hamper-char-count" class="text-xs text-ink-secondary">0 / 160 karakter</span>
+              </div>
+              <textarea id="hamper-note" rows="3" maxlength="160" placeholder="Tulis pesan hangat untuk penerima hampers..."
+                class="w-full rounded-xl bg-ivory border border-hairline p-3 text-sm text-[#2F261F] placeholder-[#8A7A6B] focus:outline-none focus:border-[#4E4035]"></textarea>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="bg-pure-white rounded-2xl p-6 border border-hairline sticky top-28 space-y-5">
+              <div class="flex items-center justify-between border-b border-hairline pb-3">
+                <h3 class="font-editorial text-2xl font-bold text-taupe-deep">Ringkasan Hampers</h3>
+                <span class="text-xs font-semibold text-taupe-mid">Siap Kirim</span>
+              </div>
+
+              <div class="rounded-2xl bg-ivory border border-hairline p-4">
+                <p class="text-[10px] uppercase tracking-widest text-taupe-mid font-bold mb-1">Pratinjau Kartu Ucapan</p>
+                <p id="hamper-card-preview" class="font-editorial italic text-base text-taupe-deep min-h-[48px] break-words">
+                  "Semoga setiap helai kelembutan ini membawa keteduhan di hari-harimu."
+                </p>
+                <p class="text-[11px] text-ink-secondary mt-2 text-right">— KalaTeduh Gift Studio</p>
+              </div>
+
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-taupe-mid mb-2">Rincian Isi:</p>
+                <ul id="hamper-summary-list" class="space-y-2 text-sm text-taupe-deep"></ul>
+              </div>
+
+              <div class="border-t border-hairline pt-4 flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-xs text-ink-secondary">Total Hampers</p>
+                  <p id="hamper-total-price" class="text-2xl font-bold text-taupe-deep">Rp0</p>
+                </div>
+                <button type="button" id="btn-add-hamper" class="tactile-btn px-5 py-3 rounded-full bg-taupe-deep hover:bg-[#3A2E25] text-white text-sm font-semibold cursor-pointer">
+                  + Keranjang
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="bg-taupe-deep text-[#FAF7F2]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-2 space-y-3">
+          <span class="font-editorial text-3xl font-bold tracking-tight">KalaTeduh</span>
+          <p class="text-sm text-[#E6DDD0] max-w-md leading-relaxed">
+            Hijab dan perlengkapan ibadah berkarakter editorial dengan nuansa putih bersih, ivory, dan deep taupe yang menenangkan.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-[#E6DDD0] mb-3">Akses Cepat</h4>
+          <ul class="space-y-2 text-sm">
+            <li><button type="button" id="footer-track-btn" class="hover:underline cursor-pointer">Pelacakan Pesanan &amp; Resi</button></li>
+            <li><a href="#fitur-interaktif" class="hover:underline">Matcher Warna &amp; Ukuran</a></li>
+            <li><a href="#hampers-builder" class="hover:underline">Custom Hampers Builder</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-[#E6DDD0] mb-3">Layanan</h4>
+          <p class="text-sm">Senin – Sabtu • 08.00 – 20.00 WIB</p>
+          <p class="text-xs text-[#E6DDD0] mt-2">Pengiriman Nasional Terlacak</p>
+        </div>
+      </div>
+      <div class="border-t border-white/15 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#E6DDD0] gap-2">
+        <p>© 2026 KalaTeduh. Seluruh hak cipta dilindungi.</p>
+        <p>CSP Aktif • Anti-XSS Protected</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       MODAL DETAIL PRODUK + MIX & MATCH
+       ===================================================================== -->
+  <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#2F261F]/65 backdrop-blur-xs" role="dialog" aria-modal="true" aria-labelledby="modal-prod-title">
+    <div class="modal-animate bg-pure-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-hairline shadow-2xl p-6 sm:p-8 relative">
+      <button type="button" id="close-product-modal" aria-label="Tutup Detail Produk" class="tactile-btn absolute top-5 right-5 w-9 h-9 rounded-full bg-ivory hover:bg-ivory-warm text-taupe-deep flex items-center justify-center border border-hairline cursor-pointer">
+        ✕
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="space-y-3">
+          <div class="aspect-square rounded-2xl bg-ivory border border-hairline flex flex-col items-center justify-center p-6">
+            <svg class="w-40 h-40" viewBox="0 0 180 180" fill="none">
+              <path id="modal-fabric-shape" d="M35 140C45 75 75 35 115 35C140 35 152 65 145 140C120 128 70 128 35 140Z" fill="#6B5B4E"/>
+              <path d="M55 140C65 88 88 52 118 45C130 65 132 100 124 140" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span id="modal-prod-material-badge" class="mt-3 px-3 py-1 rounded-full bg-pure-white text-taupe-deep text-xs font-semibold border border-hairline">Voal Ultrafine</span>
+          </div>
+          <button type="button" id="modal-btn-drape" class="tactile-btn w-full py-2.5 rounded-xl bg-ivory hover:bg-ivory-warm text-taupe-deep text-xs font-semibold border border-hairline cursor-pointer">
+            ▶ Buka Kanvas Drape &amp; Tekstur
+          </button>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <span id="modal-prod-cat" class="text-xs font-bold uppercase tracking-wider text-taupe-mid">Kategori</span>
+            <h3 id="modal-prod-title" class="font-editorial text-3xl font-bold text-taupe-deep mt-0.5">Nama Produk</h3>
+            <div class="flex items-center gap-3 mt-1">
+              <p id="modal-prod-price" class="text-xl font-bold text-taupe-deep">Rp0</p>
+              <span id="modal-prod-rating" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-ivory text-taupe-deep border border-hairline">★ 4.9</span>
+            </div>
+          </div>
+
+          <p id="modal-prod-desc" class="text-sm text-ink-secondary leading-relaxed"></p>
+
+          <div>
+            <p class="text-xs font-bold text-taupe-deep mb-2">Warna: <span id="modal-selected-color-name" class="font-normal text-ink-secondary"></span></p>
+            <div id="modal-swatch-list" class="flex flex-wrap gap-2"></div>
+          </div>
+
+          <div class="rounded-2xl bg-ivory p-3.5 border border-hairline space-y-1.5 text-xs">
+            <p><strong class="text-taupe-deep">Spesifikasi:</strong> <span id="modal-prod-spec" class="text-ink-secondary"></span></p>
+            <p><strong class="text-taupe-deep">Perawatan:</strong> <span id="modal-prod-care" class="text-ink-secondary"></span></p>
+          </div>
+
+          <button type="button" id="modal-add-cart-btn" class="tactile-btn w-full py-3 rounded-full bg-taupe-deep hover:bg-[#3A2E25] text-white text-sm font-semibold cursor-pointer">
+            + Tambah ke Keranjang
+          </button>
+        </div>
+      </div>
+
+      <!-- MIX & MATCH -->
+      <div class="mt-8 pt-6 border-t border-hairline">
+        <h4 class="font-editorial text-xl font-bold text-taupe-deep mb-1">Mix &amp; Match — Rekomendasi Pasangan Produk</h4>
+        <p class="text-xs text-ink-secondary mb-3">Padanan serasi untuk melengkapi gaya dan perlengkapan ibadahmu</p>
+        <div id="mix-match-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL KANVAS DRAPE & TEXTURE PREVIEW
+       ===================================================================== -->
+  <div id="drape-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#2F261F]/70 backdrop-blur-xs" role="dialog" aria-modal="true" aria-labelledby="drape-modal-title">
+    <div class="modal-animate bg-pure-white rounded-3xl max-w-xl w-full border border-hairline shadow-2xl p-6 relative">
+      <button type="button" id="close-drape-modal" aria-label="Tutup Kanvas Drape" class="tactile-btn absolute top-5 right-5 w-9 h-9 rounded-full bg-ivory hover:bg-ivory-warm text-taupe-deep flex items-center justify-center border border-hairline cursor-pointer">
+        ✕
+      </button>
+
+      <span class="text-xs font-bold uppercase tracking-wider text-taupe-mid">Kanvas Simulasi Kain</span>
+      <h3 id="drape-modal-title" class="font-editorial text-2xl font-bold text-taupe-deep mt-0.5">Drape &amp; Texture Preview</h3>
+
+      <div class="flex flex-wrap gap-2 my-4">
+        <button type="button" data-fabric="Ceruty Babydoll" class="drape-fabric-btn tactile-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-taupe-deep text-white cursor-pointer">Ceruty Babydoll</button>
+        <button type="button" data-fabric="Voal Ultrafine" class="drape-fabric-btn tactile-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-ivory text-taupe-deep border border-hairline cursor-pointer">Voal Ultrafine</button>
+        <button type="button" data-fabric="Silk Armani" class="drape-fabric-btn tactile-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-ivory text-taupe-deep border border-hairline cursor-pointer">Silk Armani</button>
+        <button type="button" data-fabric="Katun Rayon" class="drape-fabric-btn tactile-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-ivory text-taupe-deep border border-hairline cursor-pointer">Katun Rayon</button>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-hairline bg-ivory relative">
+        <canvas id="drape-canvas" class="w-full h-56 block"></canvas>
+        <span class="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-pure-white/95 text-[11px] font-semibold text-taupe-deep border border-hairline">
+          Simulasi Jatuh Serat Real-Time
+        </span>
+      </div>
+
+      <div class="mt-4 space-y-3">
+        <div class="flex items-center justify-between gap-4">
+          <label for="wind-slider" class="text-xs font-bold text-taupe-deep shrink-0">Aliran Gerak:</label>
+          <input id="wind-slider" type="range" min="1" max="10" value="4" class="w-full">
+          <span id="wind-label" class="text-xs font-bold text-taupe-deep shrink-0">Lembut</span>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-ivory border border-hairline text-xs space-y-1">
+          <p class="font-bold text-taupe-deep" id="drape-fiber-name"></p>
+          <p class="text-ink-secondary leading-relaxed" id="drape-fiber-desc"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SLIDE-OUT CART & CHECKOUT OTOMATIS
+       ===================================================================== -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+    <div id="cart-backdrop" class="fixed inset-0 bg-[#2F261F]/55 backdrop-blur-xs"></div>
+    <aside class="modal-animate fixed top-0 right-0 h-full w-full max-w-md bg-pure-white shadow-2xl border-l border-hairline flex flex-col z-10">
+      <div class="px-6 py-4 bg-ivory border-b border-hairline flex items-center justify-between">
+        <div>
+          <h3 class="font-editorial text-2xl font-bold text-taupe-deep">Keranjang Belanja</h3>
+          <p id="cart-subtitle" class="text-xs text-ink-secondary">0 item dipilih</p>
+        </div>
+        <button type="button" id="close-cart-btn" aria-label="Tutup Keranjang" class="tactile-btn w-9 h-9 rounded-full bg-pure-white hover:bg-ivory-warm text-taupe-deep flex items-center justify-center border border-hairline cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-6 space-y-6">
+        <div id="cart-items-container" class="space-y-3"></div>
+
+        <div id="cart-empty-state" class="text-center py-12 space-y-3">
+          <div class="w-14 h-14 rounded-full bg-ivory border border-hairline mx-auto flex items-center justify-center text-taupe-deep font-editorial text-2xl">
+            ✦
+          </div>
+          <p class="font-editorial text-xl font-bold text-taupe-deep">Keranjang Masih Kosong</p>
+          <p class="text-xs text-ink-secondary">Pilih produk atau rangkai hampers untuk memulai checkout.</p>
+        </div>
+
+        <form id="checkout-form" class="hidden space-y-4 pt-4 border-t border-hairline">
+          <h4 class="font-editorial text-xl font-bold text-taupe-deep">Checkout &amp; Ongkir Otomatis</h4>
+
+          <div>
+            <label for="checkout-name" class="block text-xs font-bold text-taupe-deep mb-1">Nama Penerima *</label>
+            <input id="checkout-name" type="text" required maxlength="60" placeholder="Nama lengkap"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-ivory border border-hairline text-sm focus:outline-none focus:border-[#4E4035] focus:bg-white">
+          </div>
+
+          <div>
+            <label for="checkout-phone" class="block text-xs font-bold text-taupe-deep mb-1">Nomor WhatsApp *</label>
+            <input id="checkout-phone" type="tel" required maxlength="18" placeholder="0812xxxxxxxx"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-ivory border border-hairline text-sm focus:outline-none focus:border-[#4E4035] focus:bg-white">
+          </div>
+
+          <div>
+            <label for="checkout-region" class="block text-xs font-bold text-taupe-deep mb-1">Wilayah Pengiriman *</label>
+            <select id="checkout-region" class="w-full px-3.5 py-2.5 rounded-xl bg-ivory border border-hairline text-sm font-medium text-taupe-deep focus:outline-none focus:border-[#4E4035]">
+              <option value="12000">Jabodetabek — Rp12.000 (Gratis min. Rp250rb)</option>
+              <option value="18000">Pulau Jawa — Rp18.000 (Gratis min. Rp250rb)</option>
+              <option value="26000">Sumatera — Rp26.000</option>
+              <option value="34000">Kalimantan &amp; Sulawesi — Rp34.000</option>
+              <option value="45000">Bali, Nusa Tenggara &amp; Indonesia Timur — Rp45.000</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="checkout-address" class="block text-xs font-bold text-taupe-deep mb-1">Alamat Lengkap *</label>
+            <textarea id="checkout-address" rows="2" required maxlength="200" placeholder="Jalan, nomor rumah, kecamatan, kota"
+              class="w-full px-3.5 py-2 rounded-xl bg-ivory border border-hairline text-sm focus:outline-none focus:border-[#4E4035] focus:bg-white"></textarea>
+          </div>
+
+          <div>
+            <span class="block text-xs font-bold text-taupe-deep mb-1.5">Metode Pembayaran</span>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="cursor-pointer">
+                <input type="radio" name="payment-method" value="QRIS Instan" checked class="peer sr-only">
+                <div class="text-center py-2 px-2 rounded-xl border border-hairline bg-ivory peer-checked:bg-taupe-deep peer-checked:text-white text-xs font-semibold transition">QRIS</div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="payment-method" value="Transfer Bank VA" class="peer sr-only">
+                <div class="text-center py-2 px-2 rounded-xl border border-hairline bg-ivory peer-checked:bg-taupe-deep peer-checked:text-white text-xs font-semibold transition">Bank VA</div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="payment-method" value="COD" class="peer sr-only">
+                <div class="text-center py-2 px-2 rounded-xl border border-hairline bg-ivory peer-checked:bg-taupe-deep peer-checked:text-white text-xs font-semibold transition">COD</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-ivory p-4 border border-hairline space-y-1.5 text-xs">
+            <div class="flex justify-between text-ink-secondary">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">Rp0</span>
+            </div>
+            <div class="flex justify-between text-ink-secondary">
+              <span>Ongkos Kirim</span>
+              <span id="summary-shipping">Rp0</span>
+            </div>
+            <div class="flex justify-between text-base font-bold text-taupe-deep pt-2 border-t border-hairline">
+              <span>Total Bayar</span>
+              <span id="summary-grand-total">Rp0</span>
+            </div>
+          </div>
+
+          <button type="submit" class="tactile-btn w-full py-3.5 rounded-full bg-taupe-deep hover:bg-[#3A2E25] text-white text-sm font-bold cursor-pointer">
+            Buat Pesanan &amp; Terbitkan Resi
+          </button>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <!-- =====================================================================
+       MODAL STATUS PESANAN & RESI
+       ===================================================================== -->
+  <div id="tracking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#2F261F]/65 backdrop-blur-xs" role="dialog" aria-modal="true" aria-labelledby="tracking-modal-title">
+    <div class="modal-animate bg-pure-white rounded-3xl max-w-lg w-full border border-hairline shadow-2xl p-6 sm:p-7 relative">
+      <button type="button" id="close-tracking-modal" aria-label="Tutup Pelacakan Resi" class="tactile-btn absolute top-5 right-5 w-9 h-9 rounded-full bg-ivory hover:bg-ivory-warm text-taupe-deep flex items-center justify-center border border-hairline cursor-pointer">
+        ✕
+      </button>
+
+      <span class="text-xs font-bold uppercase tracking-wider text-taupe-mid">Status &amp; Pengiriman</span>
+      <h3 id="tracking-modal-title" class="font-editorial text-2xl font-bold text-taupe-deep mt-0.5">Pelacakan Pesanan &amp; Resi</h3>
+
+      <div class="mt-4 flex gap-2">
+        <label for="resi-input" class="sr-only">Nomor Resi</label>
+        <input id="resi-input" type="text" value="KT-2026-8891" placeholder="KT-2026-8891"
+          class="flex-1 px-3.5 py-2.5 rounded-xl bg-ivory border border-hairline text-sm font-semibold text-taupe-deep uppercase focus:outline-none focus:border-[#4E4035]">
+        <button type="button" id="btn-search-resi" class="tactile-btn px-4 py-2.5 rounded-xl bg-taupe-deep hover:bg-[#3A2E25] text-white text-xs font-semibold cursor-pointer">
+          Cek Resi
+        </button>
+      </div>
+      <p class="text-[11px] text-ink-secondary mt-1.5">Contoh resi aktif: <strong>KT-2026-8891</strong> atau resi baru hasil checkout.</p>
+
+      <div id="tracking-result" class="mt-5 rounded-2xl bg-ivory border border-hairline p-5 space-y-4">
+        <div class="flex items-center justify-between border-b border-hairline pb-3">
+          <div>
+            <p class="text-xs text-ink-secondary">Nomor Resi</p>
+            <p id="track-resi-code" class="font-bold text-base text-taupe-deep">KT-2026-8891</p>
+          </div>
+          <span id="track-status-badge" class="px-3 py-1 rounded-full bg-taupe-deep text-white text-xs font-semibold">Dalam Pengiriman</span>
+        </div>
+
+        <div class="text-xs space-y-1">
+          <p><strong class="text-taupe-deep">Penerima:</strong> <span id="track-recipient" class="text-ink-secondary"></span></p>
+          <p><strong class="text-taupe-deep">Kurir:</strong> <span id="track-courier" class="text-ink-secondary"></span></p>
+        </div>
+
+        <ol id="track-timeline" class="relative border-l-2 border-[#4E4035]/30 ml-2 space-y-4 pt-1"></ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       FLOATING WHATSAPP BUTTON & CHAT POP-UP
+       ===================================================================== -->
+  <div class="fixed bottom-5 right-5 z-40 flex flex-col items-end">
+    <div id="wa-popup" class="modal-animate hidden mb-3 w-72 sm:w-80 rounded-3xl bg-pure-white border border-hairline shadow-2xl overflow-hidden">
+      <div class="bg-taupe-deep text-white p-4 flex items-center justify-between">
+        <div>
+          <p class="font-editorial text-lg font-bold leading-none">KalaTeduh Concierge</p>
+          <p class="text-[11px] text-[#E6DDD0] mt-1">Siap membantu pilihan warna &amp; pesanan</p>
+        </div>
+        <button type="button" id="close-wa-popup" aria-label="Tutup Chat WhatsApp" class="text-white/80 hover:text-white text-sm cursor-pointer">✕</button>
+      </div>
+      <div class="p-4 space-y-3 bg-ivory">
+        <div class="bg-pure-white p-3 rounded-2xl rounded-tl-none border border-hairline text-xs text-taupe-deep leading-relaxed">
+          Assalamu'alaikum Kak! Ada pertanyaan seputar bahan hijab, mukena travel, atau hampers?
+        </div>
+        <a href="https://wa.me/6281200002026?text=Assalamu'alaikum%20KalaTeduh,%20saya%20ingin%20konsultasi%20produk."
+          target="_blank" rel="noopener noreferrer"
+          class="tactile-btn flex items-center justify-center gap-2 w-full py-2.5 rounded-full bg-taupe-deep hover:bg-[#3A2E25] text-white text-xs font-bold">
+          <span>Chat via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <button type="button" id="btn-wa-float" aria-label="Buka WhatsApp KalaTeduh"
+      class="wa-float tactile-btn flex items-center gap-2 px-4 py-3 rounded-full bg-taupe-deep hover:bg-[#3A2E25] text-white shadow-lg border border-white/20 cursor-pointer">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+      </svg>
+      <span class="text-xs font-bold hidden sm:inline">WhatsApp</span>
+    </button>
+  </div>
+
+  <!-- TOAST CONTAINER (Tanpa alert/confirm) -->
+  <div id="toast-container" aria-live="polite" class="fixed top-24 right-4 z-50 flex flex-col gap-2 max-w-xs w-full pointer-events-none"></div>
+
+  <!-- =====================================================================
+       SCRIPT INTERAKTIF (100% textContent & createElement untuk data dinamis)
+       ===================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      const PRODUCTS = [
+        {
+          id: 'kt-pash-01',
+          name: 'Pashmina Silk Aluna',
+          category: 'Pashmina',
+          price: 89000,
+          rating: 4.9,
+          reviews: 312,
+          material: 'Silk Armani',
+          spec: '180 × 75 cm • Jahit tepi rapi',
+          care: 'Cuci tangan lembut, setrika suhu rendah.',
+          desc: 'Kilau lembut elegan dengan sisi dalam matte agar tidak licin dan nyaman dipakai seharian.',
+          colors: [
+            { name: 'Deep Taupe', hex: '#4E4035' },
+            { name: 'Cream Ivory', hex: '#FAF7F2' },
+            { name: 'Warm Taupe', hex: '#6B5B4E' },
+            { name: 'Sand Linen', hex: '#CBBBA8' }
+          ],
+          mixWith: ['kt-segi-02', 'kt-saj-01']
+        },
+        {
+          id: 'kt-pash-02',
+          name: 'Pashmina Ceruty Nadira',
+          category: 'Pashmina',
+          price: 75000,
+          rating: 4.8,
+          reviews: 428,
+          material: 'Ceruty Babydoll',
+          spec: '185 × 75 cm • Crepe halus',
+          care: 'Cuci lembut dengan deterjen cair, jemur teduh.',
+          desc: 'Jatuhan kain ringan dan mengalir lembut untuk gaya kasual maupun formal.',
+          colors: [
+            { name: 'Ivory Oat', hex: '#F4EFE7' },
+            { name: 'Mocca Taupe', hex: '#6B5B4E' },
+            { name: 'Cocoa Deep', hex: '#4E4035' }
+          ],
+          mixWith: ['kt-muk-01', 'kt-saj-02']
+        },
+        {
+          id: 'kt-segi-01',
+          name: 'Segi Empat Voal Seruni',
+          category: 'Hijab Segi Empat',
+          price: 79000,
+          rating: 5.0,
+          reviews: 519,
+          material: 'Voal Ultrafine',
+          spec: '115 × 115 cm • Laser cut presisi',
+          care: 'Cuci manual, setrika suhu hangat.',
+          desc: 'Tegak sempurna di dahi tanpa mudah melorot, adem dan ringan di telinga.',
+          colors: [
+            { name: 'Putih Bersih', hex: '#FFFFFF' },
+            { name: 'Ivory Mist', hex: '#FAF7F2' },
+            { name: 'Deep Taupe', hex: '#4E4035' },
+            { name: 'Warm Stone', hex: '#A89786' }
+          ],
+          mixWith: ['kt-muk-02', 'kt-saj-01']
+        },
+        {
+          id: 'kt-segi-02',
+          name: 'Segi Empat Syar’i Kinanti',
+          category: 'Hijab Segi Empat',
+          price: 98000,
+          rating: 4.9,
+          reviews: 194,
+          material: 'Voal Ultrafine',
+          spec: '130 × 130 cm • Cakupan luas',
+          care: 'Cuci tangan dengan air dingin.',
+          desc: 'Ukuran lebar 130 cm yang menutup dada dengan rapi namun tetap terasa sejuk.',
+          colors: [
+            { name: 'Ivory Cream', hex: '#FAF7F2' },
+            { name: 'Taupe Mid', hex: '#6B5B4E' },
+            { name: 'Espresso Taupe', hex: '#4E4035' }
+          ],
+          mixWith: ['kt-pash-01', 'kt-saj-02']
+        },
+        {
+          id: 'kt-muk-01',
+          name: 'Mukena Travel Parasut Sakina',
+          category: 'Mukena Travel',
+          price: 165000,
+          rating: 4.9,
+          reviews: 610,
+          material: 'Silk Armani',
+          spec: 'Atasan 120 cm • Pouch ringkas',
+          care: 'Cuci lembut, cepat kering.',
+          desc: 'Praktis dibawa bepergian, dilengkapi sajadah muka lipat dan pouch serasi.',
+          colors: [
+            { name: 'Ivory Pearl', hex: '#FAF7F2' },
+            { name: 'Deep Taupe', hex: '#4E4035' },
+            { name: 'Warm Taupe', hex: '#6B5B4E' }
+          ],
+          mixWith: ['kt-saj-01', 'kt-saj-02']
+        },
+        {
+          id: 'kt-muk-02',
+          name: 'Mukena Katun Rayon Khadijah',
+          category: 'Mukena Travel',
+          price: 195000,
+          rating: 5.0,
+          reviews: 385,
+          material: 'Katun Rayon',
+          spec: 'Atasan 125 cm • Renda halus',
+          care: 'Cuci terpisah pada pencucian awal.',
+          desc: 'Katun rayon adem dan menyerap keringat untuk kenyamanan ibadah harian.',
+          colors: [
+            { name: 'Putih Tulang', hex: '#FAF7F2' },
+            { name: 'Deep Taupe', hex: '#4E4035' },
+            { name: 'Taupe Sand', hex: '#CBBBA8' }
+          ],
+          mixWith: ['kt-saj-01', 'kt-segi-01']
+        },
+        {
+          id: 'kt-saj-01',
+          name: 'Sajadah Travel Tenun Kufah',
+          category: 'Sajadah & Tasbih',
+          price: 68000,
+          rating: 4.8,
+          reviews: 276,
+          material: 'Katun Rayon',
+          spec: '105 × 55 cm • Alas anti-slip',
+          care: 'Cuci tangan lembut, lipat rapi.',
+          desc: 'Motif geometris minimalis dengan alas anti-slip dan pouch ringkas.',
+          colors: [
+            { name: 'Deep Taupe', hex: '#4E4035' },
+            { name: 'Ivory Tenun', hex: '#FAF7F2' }
+          ],
+          mixWith: ['kt-muk-01', 'kt-saj-02']
+        },
+        {
+          id: 'kt-saj-02',
+          name: 'Tasbih Kayu Zaitun 33 Butir',
+          category: 'Sajadah & Tasbih',
+          price: 45000,
+          rating: 4.9,
+          reviews: 215,
+          material: 'Kayu Zaitun',
+          spec: '33 butir (8 mm) • Tali kuat',
+          care: 'Simpan di tempat kering.',
+          desc: 'Butiran kayu zaitun alami yang halus di genggaman untuk menemani dzikir.',
+          colors: [
+            { name: 'Warm Taupe Wood', hex: '#6B5B4E' },
+            { name: 'Dark Taupe Wood', hex: '#4E4035' }
+          ],
+          mixWith: ['kt-muk-01', 'kt-saj-01']
+        }
+      ];
+
+      const SKIN_TONES = [
+        { name: 'Fair Ivory', hex: '#F8E4D4' },
+        { name: 'Warm Beige', hex: '#EBC9AD' },
+        { name: 'Olive Medium', hex: '#D5AE89' },
+        { name: 'Honey Tan', hex: '#B7855C' },
+        { name: 'Deep Espresso', hex: '#764B32' }
+      ];
+
+      const HIJAB_SHADES = [
+        { name: 'Putih Ivory', hex: '#FAF7F2', productId: 'kt-segi-01' },
+        { name: 'Warm Taupe', hex: '#6B5B4E', productId: 'kt-pash-01' },
+        { name: 'Deep Taupe', hex: '#4E4035', productId: 'kt-pash-01' },
+        { name: 'Sand Linen', hex: '#CBBBA8', productId: 'kt-segi-02' },
+        { name: 'Soft Stone', hex: '#9E8D7B', productId: 'kt-pash-02' }
+      ];
+
+      const HAMPER_ITEMS = [
+        { id: 'h-hijab', name: 'Segi Empat Voal Seruni (Ivory Mist)', price: 79000 },
+        { id: 'h-pash', name: 'Pashmina Silk Aluna (Deep Taupe)', price: 89000 },
+        { id: 'h-mukena', name: 'Mukena Travel Parasut Sakina', price: 165000 },
+        { id: 'h-sajadah', name: 'Sajadah Travel Tenun Kufah', price: 68000 },
+        { id: 'h-tasbih', name: 'Tasbih Kayu Zaitun 33 Butir', price: 45000 }
+      ];
+
+      const FIBER_INFO = {
+        'Ceruty Babydoll': {
+          waveAmp: 26,
+          waveFreq: 0.022,
+          color: '#6B5B4E',
+          desc: 'Tekstur crepe halus yang ringan dan melambai lembut mengikuti aliran udara.'
+        },
+        'Voal Ultrafine': {
+          waveAmp: 12,
+          waveFreq: 0.015,
+          color: '#4E4035',
+          desc: 'Anyaman rapat dan terstruktur sehingga mudah dibentuk tegak di dahi.'
+        },
+        'Silk Armani': {
+          waveAmp: 22,
+          waveFreq: 0.019,
+          color: '#A89786',
+          desc: 'Kilau halus berkarakter jatuh rapi dengan sentuhan sejuk.'
+        },
+        'Katun Rayon': {
+          waveAmp: 18,
+          waveFreq: 0.017,
+          color: '#7D6A5B',
+          desc: 'Serat adem berdaya serap tinggi yang nyaman untuk aktivitas ibadah.'
+        }
+      };
+
+      const TRACKING_DB = {
+        'KT-2026-8891': {
+          resi: 'KT-2026-8891',
+          status: 'Dalam Pengiriman',
+          recipient: 'Nadia Rahma (Medan)',
+          courier: 'KalaTeduh Express • QRIS Instan',
+          steps: [
+            { time: 'Hari ini, 10:15 WIB', title: 'Kurir sedang mengantar paket ke alamat tujuan' },
+            { time: 'Hari ini, 06:40 WIB', title: 'Paket tiba di pusat pengiriman kota tujuan' },
+            { time: 'Kemarin, 17:30 WIB', title: 'Selesai dikemas rapi oleh tim KalaTeduh' },
+            { time: 'Kemarin, 14:10 WIB', title: 'Pembayaran terkonfirmasi' }
+          ]
+        }
+      };
+
+      const state = {
+        category: 'Semua',
+        search: '',
+        sort: 'featured',
+        selectedSwatches: {},
+        cart: [],
+        matcherSkin: SKIN_TONES[1],
+        matcherShade: HIJAB_SHADES[1],
+        fitHeight: 160,
+        fitModel: 'Pashmina',
+        hamperBox: 'kraft',
+        hamperSelectedIds: ['h-hijab', 'h-tasbih'],
+        hamperNote: '',
+        activeModalProduct: null,
+        activeModalColorIdx: 0,
+        drapeFabric: 'Ceruty Babydoll',
+        drapeWind: 4
+      };
+
+      function formatRupiah(num) {
+        return 'Rp' + Number(num).toLocaleString('id-ID');
+      }
+
+      function createEl(tag, className, text) {
+        const el = document.createElement(tag);
+        if (className) el.className = className;
+        if (text !== undefined && text !== null) el.textContent = String(text);
+        return el;
+      }
+
+      function showToast(title, message) {
+        const container = document.getElementById('toast-container');
+        const toast = createEl('div', 'modal-animate pointer-events-auto rounded-2xl bg-taupe-deep text-white p-3.5 shadow-xl border border-white/15');
+        toast.appendChild(createEl('p', 'text-xs font-bold', title));
+        toast.appendChild(createEl('p', 'text-xs text-[#E6DDD0] mt-0.5', message));
+        container.appendChild(toast);
+
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateY(-6px)';
+          setTimeout(() => toast.remove(), 250);
+        }, 3000);
+      }
+
+      /* Scroll Reveal & Subtle Parallax */
+      function initScrollMotion() {
+        const items = document.querySelectorAll('.reveal-item');
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12 });
+          items.forEach((el) => observer.observe(el));
+        } else {
+          items.forEach((el) => el.classList.add('is-visible'));
+        }
+
+        const heroCard = document.getElementById('hero-parallax-card');
+        window.addEventListener('scroll', () => {
+          if (!heroCard || window.innerWidth < 1024) return;
+          const offset = Math.min(28, window.scrollY * 0.05);
+          heroCard.style.transform = `translateY(${-offset * 0.45}px)`;
+        }, { passive: true });
+      }
+
+      /* Catalog */
+      function getFilteredProducts() {
+        let list = PRODUCTS.filter((p) => {
+          const matchCat = state.category === 'Semua' || p.category === state.category;
+          const q = state.search.trim().toLowerCase();
+          const matchSearch = !q ||
+            p.name.toLowerCase().includes(q) ||
+            p.category.toLowerCase().includes(q) ||
+            p.material.toLowerCase().includes(q);
+          return matchCat && matchSearch;
+        });
+
+        if (state.sort === 'price-asc') list = [...list].sort((a, b) => a.price - b.price);
+        else if (state.sort === 'price-desc') list = [...list].sort((a, b) => b.price - a.price);
+        else if (state.sort === 'rating') list = [...list].sort((a, b) => b.rating - a.rating);
+        return list;
+      }
+
+      function renderCatalog() {
+        const grid = document.getElementById('product-grid');
+        const emptyBox = document.getElementById('empty-catalog');
+        const countLabel = document.getElementById('catalog-count');
+        grid.replaceChildren();
+
+        if (state.category === 'Hampers') {
+          countLabel.textContent = 'Paket Hampers Kustom';
+          emptyBox.classList.add('hidden');
+          const banner = createEl('div', 'col-span-full rounded-3xl bg-ivory p-6 sm:p-8 border border-hairline flex flex-col sm:flex-row items-center justify-between gap-4');
+          const info = createEl('div');
+          info.appendChild(createEl('h3', 'font-editorial text-2xl font-bold text-taupe-deep', 'Rangkai Hampers Personal KalaTeduh'));
+          info.appendChild(createEl('p', 'text-sm text-ink-secondary mt-1', 'Pilih kemasan, 2–3 isi produk, dan kartu ucapan pada bagian Hampers Builder di bawah.'));
+          const link = createEl('a', 'tactile-btn shrink-0 px-5 py-2.5 rounded-full bg-taupe-deep text-white text-xs font-semibold', 'Ke Hampers Builder ↓');
+          link.href = '#hampers-builder';
+          banner.appendChild(info);
+          banner.appendChild(link);
+          grid.appendChild(banner);
+          return;
+        }
+
+        const items = getFilteredProducts();
+        countLabel.textContent = `Menampilkan ${items.length} produk pilihan`;
+
+        if (items.length === 0) {
+          emptyBox.classList.remove('hidden');
+          return;
+        }
+        emptyBox.classList.add('hidden');
+
+        items.forEach((prod) => {
+          const selectedIdx = state.selectedSwatches[prod.id] || 0;
+          const activeColor = prod.colors[selectedIdx] || prod.colors[0];
+
+          const card = createEl('article', 'card-editorial rounded-3xl bg-pure-white border border-hairline overflow-hidden flex flex-col justify-between');
+
+          const visualWrap = createEl('div', 'relative p-5 bg-ivory flex flex-col items-center justify-center aspect-[4/3]');
+          visualWrap.appendChild(createEl('span', 'absolute top-3 left-3 px-2.5 py-1 rounded-full bg-pure-white text-taupe-deep text-[11px] font-semibold border border-hairline', prod.material));
+          visualWrap.appendChild(createEl('span', 'absolute top-3 right-3 px-2.5 py-1 rounded-full bg-pure-white text-taupe-deep text-[11px] font-semibold border border-hairline', `★ ${prod.rating.toFixed(1)}`));
+
+          const svgNS = 'http://www.w3.org/2000/svg';
+          const svg = document.createElementNS(svgNS, 'svg');
+          svg.setAttribute('viewBox', '0 0 160 120');
+          svg.setAttribute('class', 'w-32 h-24');
+          const p1 = document.createElementNS(svgNS, 'path');
+          p1.setAttribute('d', 'M28 102C38 48 64 20 98 20C122 20 135 45 128 102C102 92 60 92 28 102Z');
+          p1.setAttribute('fill', activeColor.hex);
+          p1.setAttribute('stroke', '#4E4035');
+          p1.setAttribute('stroke-opacity', '0.2');
+          const p2 = document.createElementNS(svgNS, 'path');
+          p2.setAttribute('d', 'M48 102C56 60 76 34 104 28C114 44 116 72 108 102');
+          p2.setAttribute('stroke', '#4E4035');
+          p2.setAttribute('stroke-opacity', '0.25');
+          p2.setAttribute('stroke-width', '2');
+          p2.setAttribute('fill', 'none');
+          svg.appendChild(p1);
+          svg.appendChild(p2);
+
+          const drapeBtn = createEl('button', 'tactile-btn mt-2 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-pure-white hover:bg-taupe-deep hover:text-white text-taupe-deep text-[11px] font-semibold border border-hairline transition cursor-pointer', '▶ Drape & Tekstur');
+          drapeBtn.type = 'button';
+          drapeBtn.addEventListener('click', () => openDrapeModal(prod.material));
+
+          visualWrap.appendChild(svg);
+          visualWrap.appendChild(drapeBtn);
+
+          const body = createEl('div', 'p-5 flex-1 flex flex-col justify-between space-y-4');
+          const topInfo = createEl('div');
+          topInfo.appendChild(createEl('p', 'text-[11px] font-semibold uppercase tracking-wider text-taupe-mid', prod.category));
+          const titleBtn = createEl('button', 'text-left font-editorial text-xl font-bold text-taupe-deep hover:underline mt-0.5 cursor-pointer block', prod.name);
+          titleBtn.type = 'button';
+          titleBtn.addEventListener('click', () => openProductModal(prod.id));
+          topInfo.appendChild(titleBtn);
+          topInfo.appendChild(createEl('p', 'text-base font-bold text-taupe-deep mt-1', formatRupiah(prod.price)));
+
+          const swatchRow = createEl('div', 'flex items-center justify-between gap-2 pt-2');
+          const dotsWrap = createEl('div', 'flex items-center gap-1.5');
+          prod.colors.forEach((c, idx) => {
+            const dot = createEl('button', `w-5 h-5 rounded-full border transition cursor-pointer ${idx === selectedIdx ? 'ring-2 ring-offset-2 ring-[#4E4035] border-[#4E4035]' : 'border-[#4E4035]/30'}`);
+            dot.type = 'button';
+            dot.style.backgroundColor = c.hex;
+            dot.setAttribute('aria-label', `Pilih warna ${c.name}`);
+            dot.addEventListener('click', () => {
+              state.selectedSwatches[prod.id] = idx;
+              renderCatalog();
+            });
+            dotsWrap.appendChild(dot);
+          });
+          swatchRow.appendChild(dotsWrap);
+          swatchRow.appendChild(createEl('span', 'text-[11px] text-ink-secondary truncate', activeColor.name));
+          topInfo.appendChild(swatchRow);
+
+          const actions = createEl('div', 'grid grid-cols-2 gap-2 pt-2');
+          const detailBtn = createEl('button', 'tactile-btn py-2 px-3 rounded-xl bg-ivory hover:bg-ivory-warm text-taupe-deep text-xs font-semibold border border-hairline cursor-pointer', 'Detail');
+          detailBtn.type = 'button';
+          detailBtn.addEventListener('click', () => openProductModal(prod.id));
+
+          const addBtn = createEl('button', 'tactile-btn py-2 px-3 rounded-xl bg-taupe-deep hover:bg-[#3A2E25] text-white text-xs font-semibold cursor-pointer', '+ Keranjang');
+          addBtn.type = 'button';
+          addBtn.addEventListener('click', () => addToCart({ id: prod.id, name: prod.name, color: activeColor.name, price: prod.price }));
+
+          actions.appendChild(detailBtn);
+          actions.appendChild(addBtn);
+
+          body.appendChild(topInfo);
+          body.appendChild(actions);
+
+          card.appendChild(visualWrap);
+          card.appendChild(body);
+          grid.appendChild(card);
+        });
+      }
+
+      /* Product Detail Modal + Mix & Match */
+      function openProductModal(productId) {
+        const prod = PRODUCTS.find((p) => p.id === productId);
+        if (!prod) return;
+        state.activeModalProduct = prod;
+        state.activeModalColorIdx = state.selectedSwatches[prod.id] || 0;
+
+        document.getElementById('modal-prod-cat').textContent = prod.category;
+        document.getElementById('modal-prod-title').textContent = prod.name;
+        document.getElementById('modal-prod-price').textContent = formatRupiah(prod.price);
+        document.getElementById('modal-prod-rating').textContent = `★ ${prod.rating.toFixed(1)} (${prod.reviews})`;
+        document.getElementById('modal-prod-desc').textContent = prod.desc;
+        document.getElementById('modal-prod-spec').textContent = `${prod.spec} • ${prod.material}`;
+        document.getElementById('modal-prod-care').textContent = prod.care;
+        document.getElementById('modal-prod-material-badge').textContent = prod.material;
+
+        renderModalSwatches();
+        renderMixAndMatch(prod);
+
+        const modal = document.getElementById('product-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      function renderModalSwatches() {
+        const prod = state.activeModalProduct;
+        if (!prod) return;
+        const activeColor = prod.colors[state.activeModalColorIdx] || prod.colors[0];
+        document.getElementById('modal-selected-color-name').textContent = activeColor.name;
+        document.getElementById('modal-fabric-shape').setAttribute('fill', activeColor.hex);
+
+        const wrap = document.getElementById('modal-swatch-list');
+        wrap.replaceChildren();
+        prod.colors.forEach((c, idx) => {
+          const btn = createEl('button', `tactile-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border cursor-pointer ${idx === state.activeModalColorIdx ? 'bg-taupe-deep text-white border-[#4E4035]' : 'bg-ivory text-taupe-deep border-hairline'}`);
+          btn.type = 'button';
+          const dot = createEl('span', 'w-3.5 h-3.5 rounded-full border border-[#4E4035]/30');
+          dot.style.backgroundColor = c.hex;
+          btn.appendChild(dot);
+          btn.appendChild(createEl('span', '', c.name));
+          btn.addEventListener('click', () => {
+            state.activeModalColorIdx = idx;
+            state.selectedSwatches[prod.id] = idx;
+            renderModalSwatches();
+            renderCatalog();
+          });
+          wrap.appendChild(btn);
+        });
+      }
+
+      function renderMixAndMatch(prod) {
+        const container = document.getElementById('mix-match-container');
+        container.replaceChildren();
+        (prod.mixWith || []).forEach((pairId) => {
+          const pair = PRODUCTS.find((p) => p.id === pairId);
+          if (!pair) return;
+          const card = createEl('div', 'rounded-2xl bg-ivory p-3.5 border border-hairline flex items-center justify-between gap-3');
+          const info = createEl('div');
+          info.appendChild(createEl('p', 'text-xs font-bold text-taupe-deep', pair.name));
+          info.appendChild(createEl('p', 'text-[11px] text-ink-secondary', `${pair.colors[0].name} • ${formatRupiah(pair.price)}`));
+          const btn = createEl('button', 'tactile-btn shrink-0 px-3 py-1.5 rounded-xl bg-taupe-deep hover:bg-[#3A2E25] text-white text-xs font-semibold cursor-pointer', '+ Pasangkan');
+          btn.type = 'button';
+          btn.addEventListener('click', () => addToCart({ id: pair.id, name: pair.name, color: pair.colors[0].name, price: pair.price }));
+          card.appendChild(info);
+          card.appendChild(btn);
+          container.appendChild(card);
+        });
+      }
+
+      /* Color & Skin Tone Matcher */
+      function initColorMatcher() {
+        const skinWrap = document.getElementById('skin-tone-list');
+        const shadeWrap = document.getElementById('hijab-shade-list');
+
+        function updateMatcherUI() {
+          skinWrap.replaceChildren();
+          SKIN_TONES.forEach((skin) => {
+            const active = skin.name === state.matcherSkin.name;
+            const btn = createEl('button', `tactile-btn flex flex-col items-center p-2 rounded-xl border cursor-pointer ${active ? 'bg-ivory border-[#4E4035]' : 'bg-pure-white border-hairline'}`);
+            btn.type = 'button';
+            const circle = createEl('span', 'w-7 h-7 rounded-full border border-[#4E4035]/20');
+            circle.style.backgroundColor = skin.hex;
+            btn.appendChild(circle);
+            btn.appendChild(createEl('span', 'text-[10px] font-semibold text-taupe-deep mt-1 text-center leading-tight', skin.name));
+            btn.addEventListener('click', () => {
+              state.matcherSkin = skin;
+              updateMatcherUI();
+            });
+            skinWrap.appendChild(btn);
+          });
+
+          shadeWrap.replaceChildren();
+          HIJAB_SHADES.forEach((shade) => {
+            const active = shade.name === state.matcherShade.name;
+            const btn = createEl('button', `tactile-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold border cursor-pointer ${active ? 'bg-taupe-deep text-white border-[#4E4035]' : 'bg-ivory text-taupe-deep border-hairline'}`);
+            btn.type = 'button';
+            const dot = createEl('span', 'w-3.5 h-3.5 rounded-full border border-[#4E4035]/30');
+            dot.style.backgroundColor = shade.hex;
+            btn.appendChild(dot);
+            btn.appendChild(createEl('span', '', shade.name));
+            btn.addEventListener('click', () => {
+              state.matcherShade = shade;
+              updateMatcherUI();
+            });
+            shadeWrap.appendChild(btn);
+          });
+
+          document.getElementById('svg-skin-face').setAttribute('fill', state.matcherSkin.hex);
+          document.getElementById('svg-skin-neck').setAttribute('fill', state.matcherSkin.hex);
+          document.getElementById('svg-hijab-outer').setAttribute('fill', state.matcherShade.hex);
+          document.getElementById('svg-hijab-wrap').setAttribute('fill', state.matcherShade.hex);
+
+          document.getElementById('matcher-score').textContent =
+            state.matcherShade.name === 'Putih Ivory' ? '98% Kontras Bersih' : '96% Sangat Serasi';
+          document.getElementById('matcher-title').textContent = `${state.matcherSkin.name} × ${state.matcherShade.name}`;
+          document.getElementById('matcher-desc').textContent =
+            `Kombinasi rona ${state.matcherSkin.name} dan ${state.matcherShade.name} memberi keseimbangan tone hangat serta tampilan wajah yang segar.`;
+
+          const linkedProd = PRODUCTS.find((p) => p.id === state.matcherShade.productId) || PRODUCTS[0];
+          document.getElementById('matcher-product-hint').textContent = `Rekomendasi: ${linkedProd.name}`;
+        }
+
+        document.getElementById('btn-matcher-add').addEventListener('click', () => {
+          const linkedProd = PRODUCTS.find((p) => p.id === state.matcherShade.productId) || PRODUCTS[0];
+          addToCart({ id: linkedProd.id, name: linkedProd.name, color: state.matcherShade.name, price: linkedProd.price });
+        });
+
+        updateMatcherUI();
+      }
+
+      /* Size & Fit Guide */
+      function initSizeGuide() {
+        const slider = document.getElementById('height-slider');
+        const modelBtns = document.querySelectorAll('.fit-model-btn');
+
+        function updateFitUI() {
+          const h = Number(state.fitHeight);
+          document.getElementById('height-display').textContent = `${h} cm`;
+          document.getElementById('fit-visual-label').textContent = `${h} cm`;
+          const pct = Math.max(46, Math.min(86, 114 - (h - 145) * 1.35));
+          document.getElementById('fit-visual-drape').style.height = `${pct}%`;
+
+          let badge = '';
+          let drop = '';
+          let tip = '';
+
+          if (state.fitModel === 'Pashmina') {
+            if (h <= 155) {
+              badge = 'Rekomendasi: 175 × 70 cm';
+              drop = 'Jatuh pas menutup dada tanpa sisa ujung kain terlalu panjang.';
+              tip = 'Gunakan lipatan rapi di bagian pipi agar tampilan lebih proporsional.';
+            } else if (h <= 166) {
+              badge = 'Rekomendasi: 180 × 75 cm';
+              drop = 'Menutup dada sempurna dengan lipatan leher yang seimbang.';
+              tip = 'Sisakan sisi kanan sedikit lebih panjang untuk lilitan bahu yang luwes.';
+            } else {
+              badge = 'Rekomendasi: 185 × 75 cm';
+              drop = 'Panjang ekstra memudahkan lilitan tetap santun untuk postur tinggi.';
+              tip = 'Bahan Ceruty Babydoll atau Silk Armani memberi jatuhan vertikal anggun.';
+            }
+          } else if (state.fitModel === 'Segi Empat') {
+            if (h <= 158) {
+              badge = 'Rekomendasi: 115 × 115 cm';
+              drop = 'Lipatan segitiga jatuh rapi di bawah dada tanpa menumpuk.';
+              tip = 'Sematan jarum di bawah dagu memberi siluet bersih dan tegak.';
+            } else {
+              badge = 'Rekomendasi: 130 × 130 cm';
+              drop = 'Cakupan syar’i yang menutup dada dan punggung dengan nyaman.';
+              tip = 'Pilih Voal Ultrafine agar tetap ringan meski berukuran lebar.';
+            }
+          } else {
+            if (h <= 156) {
+              badge = 'Rekomendasi: Mukena Ukuran M';
+              drop = 'Panjang atasan & bawahan pas tanpa menyapu lantai berlebihan.';
+              tip = 'Karet pinggang elastis lembut menjaga kenyamanan saat sujud.';
+            } else {
+              badge = 'Rekomendasi: Mukena All-Size / L';
+              drop = 'Menutup pergelangan tangan dan ujung kaki dengan sempurna.';
+              tip = 'Mukena Katun Rayon Khadijah memberi ruang gerak yang leluasa.';
+            }
+          }
+
+          document.getElementById('fit-rec-badge').textContent = badge;
+          document.getElementById('fit-drop-desc').textContent = drop;
+          document.getElementById('fit-tip-desc').textContent = tip;
+        }
+
+        slider.addEventListener('input', (e) => {
+          state.fitHeight = e.target.value;
+          updateFitUI();
+        });
+
+        modelBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.fitModel = btn.dataset.fitModel;
+            modelBtns.forEach((b) => {
+              const active = b === btn;
+              b.className = active
+                ? 'fit-model-btn tactile-btn px-3 py-2.5 rounded-xl bg-taupe-deep text-white text-xs font-semibold cursor-pointer'
+                : 'fit-model-btn tactile-btn px-3 py-2.5 rounded-xl bg-ivory hover:bg-ivory-warm text-taupe-deep text-xs font-semibold border border-hairline cursor-pointer';
+            });
+            updateFitUI();
+          });
+        });
+
+        updateFitUI();
+      }
+
+      /* Custom Hampers Builder */
+      function initHampersBuilder() {
+        const itemsGrid = document.getElementById('hamper-items-grid');
+        const boxBtns = document.querySelectorAll('.hamper-box-btn');
+        const noteInput = document.getElementById('hamper-note');
+
+        function renderHampersUI() {
+          boxBtns.forEach((btn) => {
+            const active = btn.dataset.boxId === state.hamperBox;
+            btn.className = active
+              ? 'hamper-box-btn tactile-btn text-left p-4 rounded-xl border-2 border-[#4E4035] bg-ivory cursor-pointer'
+              : 'hamper-box-btn tactile-btn text-left p-4 rounded-xl border border-hairline bg-pure-white hover:bg-ivory cursor-pointer';
+          });
+
+          itemsGrid.replaceChildren();
+          HAMPER_ITEMS.forEach((item) => {
+            const checked = state.hamperSelectedIds.includes(item.id);
+            const btn = createEl('button', `tactile-btn text-left p-3.5 rounded-xl border transition flex items-center justify-between gap-2 cursor-pointer ${checked ? 'bg-ivory border-[#4E4035]' : 'bg-pure-white border-hairline hover:bg-ivory'}`);
+            btn.type = 'button';
+
+            const left = createEl('div');
+            left.appendChild(createEl('p', 'text-xs font-bold text-taupe-deep', item.name));
+            left.appendChild(createEl('p', 'text-[11px] text-ink-secondary mt-0.5', formatRupiah(item.price)));
+
+            const badge = createEl('span', `w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${checked ? 'bg-taupe-deep text-white' : 'bg-ivory text-taupe-deep border border-hairline'}`, checked ? '✓' : '+');
+            btn.appendChild(left);
+            btn.appendChild(badge);
+
+            btn.addEventListener('click', () => {
+              if (checked) {
+                if (state.hamperSelectedIds.length <= 2) {
+                  showToast('Minimal 2 Produk', 'Pilih minimal 2 item untuk isi hampers.');
+                  return;
+                }
+                state.hamperSelectedIds = state.hamperSelectedIds.filter((id) => id !== item.id);
+              } else {
+                if (state.hamperSelectedIds.length >= 3) {
+                  showToast('Maksimal 3 Produk', 'Setiap kotak hampers memuat hingga 3 item.');
+                  return;
+                }
+                state.hamperSelectedIds.push(item.id);
+              }
+              renderHampersUI();
+            });
+
+            itemsGrid.appendChild(btn);
+          });
+
+          document.getElementById('hamper-item-counter').textContent = `${state.hamperSelectedIds.length} / 3 Dipilih`;
+
+          const list = document.getElementById('hamper-summary-list');
+          list.replaceChildren();
+
+          const boxPrice = state.hamperBox === 'hardbox' ? 45000 : 25000;
+          const boxName = state.hamperBox === 'hardbox' ? 'Hardbox Ivory Eksklusif' : 'Box Kraft Pita Taupe';
+
+          const liBox = createEl('li', 'flex justify-between text-xs');
+          liBox.appendChild(createEl('span', 'text-ink-secondary', `Kemasan: ${boxName}`));
+          liBox.appendChild(createEl('span', 'font-bold', formatRupiah(boxPrice)));
+          list.appendChild(liBox);
+
+          let total = boxPrice;
+          state.hamperSelectedIds.forEach((id) => {
+            const found = HAMPER_ITEMS.find((i) => i.id === id);
+            if (!found) return;
+            total += found.price;
+            const li = createEl('li', 'flex justify-between text-xs');
+            li.appendChild(createEl('span', '', `• ${found.name}`));
+            li.appendChild(createEl('span', 'font-bold', formatRupiah(found.price)));
+            list.appendChild(li);
+          });
+
+          document.getElementById('hamper-total-price').textContent = formatRupiah(total);
+        }
+
+        boxBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.hamperBox = btn.dataset.boxId;
+            renderHampersUI();
+          });
+        });
+
+        noteInput.addEventListener('input', (e) => {
+          const val = e.target.value;
+          state.hamperNote = val;
+          document.getElementById('hamper-char-count').textContent = `${val.length} / 160 karakter`;
+          document.getElementById('hamper-card-preview').textContent = val.trim()
+            ? `"${val.trim()}"`
+            : '"Semoga setiap helai kelembutan ini membawa keteduhan di hari-harimu."';
+        });
+
+        document.getElementById('btn-add-hamper').addEventListener('click', () => {
+          const boxPrice = state.hamperBox === 'hardbox' ? 45000 : 25000;
+          const boxLabel = state.hamperBox === 'hardbox' ? 'Hardbox Ivory' : 'Box Kraft';
+          const selectedObjs = state.hamperSelectedIds.map((id) => HAMPER_ITEMS.find((i) => i.id === id)).filter(Boolean);
+          const total = boxPrice + selectedObjs.reduce((acc, cur) => acc + cur.price, 0);
+          const itemNames = selectedObjs.map((o) => o.name.split(' (')[0]).join(', ');
+
+          addToCart({
+            id: `hamper-${Date.now()}`,
+            name: `Custom Hampers (${boxLabel})`,
+            color: itemNames,
+            price: total,
+            note: state.hamperNote.trim()
+          });
+        });
+
+        renderHampersUI();
+      }
+
+      /* Canvas Drape & Texture Preview */
+      let drapeAnimId = null;
+      let drapePhase = 0;
+
+      function openDrapeModal(initialFabric) {
+        if (initialFabric && FIBER_INFO[initialFabric]) state.drapeFabric = initialFabric;
+        updateDrapeFabricUI();
+        const modal = document.getElementById('drape-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        startDrapeCanvas();
+      }
+
+      function closeDrapeModal() {
+        const modal = document.getElementById('drape-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        if (drapeAnimId) {
+          cancelAnimationFrame(drapeAnimId);
+          drapeAnimId = null;
+        }
+      }
+
+      function updateDrapeFabricUI() {
+        const info = FIBER_INFO[state.drapeFabric] || FIBER_INFO['Ceruty Babydoll'];
+        document.getElementById('drape-fiber-name').textContent = `Karakteristik ${state.drapeFabric}`;
+        document.getElementById('drape-fiber-desc').textContent = info.desc;
+
+        document.querySelectorAll('.drape-fabric-btn').forEach((btn) => {
+          const active = btn.dataset.fabric === state.drapeFabric;
+          btn.className = active
+            ? 'drape-fabric-btn tactile-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-taupe-deep text-white cursor-pointer'
+            : 'drape-fabric-btn tactile-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-ivory text-taupe-deep border border-hairline cursor-pointer';
+        });
+      }
+
+      function startDrapeCanvas() {
+        const canvas = document.getElementById('drape-canvas');
+        const ctx = canvas.getContext('2d');
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width || 520;
+        canvas.height = rect.height || 224;
+        if (drapeAnimId) cancelAnimationFrame(drapeAnimId);
+
+        function renderFrame() {
+          const w = canvas.width;
+          const h = canvas.height;
+          const info = FIBER_INFO[state.drapeFabric] || FIBER_INFO['Ceruty Babydoll'];
+          drapePhase += state.drapeWind * 0.015;
+
+          ctx.clearRect(0, 0, w, h);
+          const grad = ctx.createLinearGradient(0, 0, w, h);
+          grad.addColorStop(0, '#FFFFFF');
+          grad.addColorStop(1, '#FAF7F2');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, w, h);
+
+          for (let layer = 0; layer < 5; layer++) {
+            ctx.beginPath();
+            const baseY = 48 + layer * 25;
+            ctx.moveTo(0, h);
+            ctx.lineTo(0, baseY);
+
+            for (let x = 0; x <= w; x += 8) {
+              const amp = info.waveAmp * (0.7 + state.drapeWind * 0.08);
+              const y = baseY +
+                Math.sin(x * info.waveFreq + drapePhase + layer * 0.85) * amp +
+                Math.cos(x * 0.012 - drapePhase * 0.65) * (amp * 0.3);
+              ctx.lineTo(x, y);
+            }
+
+            ctx.lineTo(w, h);
+            ctx.closePath();
+            ctx.fillStyle = info.color;
+            ctx.globalAlpha = 0.18 + layer * 0.14;
+            ctx.fill();
+
+            ctx.strokeStyle = '#FFFFFF';
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
+          }
+          ctx.globalAlpha = 1;
+          drapeAnimId = requestAnimationFrame(renderFrame);
+        }
+
+        renderFrame();
+      }
+
+      /* Cart, Checkout & Tracking */
+      function addToCart(item) {
+        const uid = `${item.id}::${item.color}::${item.note || ''}`;
+        const existing = state.cart.find((c) => c.uid === uid);
+        if (existing) existing.qty += 1;
+        else state.cart.push({ ...item, uid, qty: 1 });
+        renderCart();
+        showToast('Ditambahkan ke Keranjang', `${item.name} (${item.color})`);
+      }
+
+      function renderCart() {
+        const badge = document.getElementById('cart-badge');
+        const subtitle = document.getElementById('cart-subtitle');
+        const container = document.getElementById('cart-items-container');
+        const emptyState = document.getElementById('cart-empty-state');
+        const form = document.getElementById('checkout-form');
+
+        const totalQty = state.cart.reduce((sum, i) => sum + i.qty, 0);
+        badge.textContent = String(totalQty);
+        subtitle.textContent = `${totalQty} item dipilih`;
+        container.replaceChildren();
+
+        if (state.cart.length === 0) {
+          emptyState.classList.remove('hidden');
+          form.classList.add('hidden');
+          return;
+        }
+
+        emptyState.classList.add('hidden');
+        form.classList.remove('hidden');
+
+        state.cart.forEach((item) => {
+          const row = createEl('div', 'rounded-2xl bg-ivory p-3.5 border border-hairline flex items-start justify-between gap-3');
+          const info = createEl('div', 'space-y-1 flex-1 min-w-0');
+          info.appendChild(createEl('p', 'text-sm font-bold text-taupe-deep truncate', item.name));
+          info.appendChild(createEl('p', 'text-xs text-ink-secondary truncate', item.color));
+          if (item.note) info.appendChild(createEl('p', 'text-[11px] italic text-taupe-deep truncate', `Kartu: "${item.note}"`));
+          info.appendChild(createEl('p', 'text-xs font-bold text-taupe-deep pt-0.5', formatRupiah(item.price * item.qty)));
+
+          const controls = createEl('div', 'flex items-center gap-1.5 shrink-0');
+          const minusBtn = createEl('button', 'tactile-btn w-7 h-7 rounded-lg bg-pure-white border border-hairline text-taupe-deep font-bold text-xs cursor-pointer', '−');
+          minusBtn.type = 'button';
+          minusBtn.addEventListener('click', () => {
+            if (item.qty > 1) item.qty -= 1;
+            else state.cart = state.cart.filter((c) => c.uid !== item.uid);
+            renderCart();
+          });
+
+          const qtyLabel = createEl('span', 'w-6 text-center text-xs font-bold text-taupe-deep', String(item.qty));
+
+          const plusBtn = createEl('button', 'tactile-btn w-7 h-7 rounded-lg bg-pure-white border border-hairline text-taupe-deep font-bold text-xs cursor-pointer', '+');
+          plusBtn.type = 'button';
+          plusBtn.addEventListener('click', () => {
+            item.qty += 1;
+            renderCart();
+          });
+
+          controls.appendChild(minusBtn);
+          controls.appendChild(qtyLabel);
+          controls.appendChild(plusBtn);
+
+          row.appendChild(info);
+          row.appendChild(controls);
+          container.appendChild(row);
+        });
+
+        updateCheckoutTotals();
+      }
+
+      function updateCheckoutTotals() {
+        const subtotal = state.cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+        const baseShipping = Number(document.getElementById('checkout-region').value || 12000);
+        const isFree = subtotal >= 250000 && (baseShipping === 12000 || baseShipping === 18000);
+        const shipping = isFree ? 0 : baseShipping;
+
+        document.getElementById('summary-subtotal').textContent = formatRupiah(subtotal);
+        document.getElementById('summary-shipping').textContent = isFree ? 'GRATIS (Jawa)' : formatRupiah(shipping);
+        document.getElementById('summary-grand-total').textContent = formatRupiah(subtotal + shipping);
+      }
+
+      function renderTrackingData(resiCode) {
+        const clean = (resiCode || '').trim().toUpperCase();
+        const record = TRACKING_DB[clean];
+        const timeline = document.getElementById('track-timeline');
+        timeline.replaceChildren();
+
+        if (!record) {
+          document.getElementById('track-resi-code').textContent = clean || '-';
+          document.getElementById('track-status-badge').textContent = 'Tidak Ditemukan';
+          document.getElementById('track-recipient').textContent = 'Resi tidak ditemukan.';
+          document.getElementById('track-courier').textContent = '-';
+          return;
+        }
+
+        document.getElementById('track-resi-code').textContent = record.resi;
+        document.getElementById('track-status-badge').textContent = record.status;
+        document.getElementById('track-recipient').textContent = record.recipient;
+        document.getElementById('track-courier').textContent = record.courier;
+
+        record.steps.forEach((step, idx) => {
+          const li = createEl('li', 'pl-4 relative');
+          const dot = createEl('span', `w-2.5 h-2.5 rounded-full absolute -left-[6px] top-1 ${idx === 0 ? 'bg-taupe-deep ring-4 ring-[#FAF7F2]' : 'bg-[#A89786]'}`);
+          li.appendChild(dot);
+          li.appendChild(createEl('p', 'text-xs font-bold text-taupe-deep', step.title));
+          li.appendChild(createEl('p', 'text-[11px] text-ink-secondary', step.time));
+          timeline.appendChild(li);
+        });
+      }
+
+      function openTrackingModal(resiCode) {
+        if (resiCode) document.getElementById('resi-input').value = resiCode;
+        renderTrackingData(document.getElementById('resi-input').value);
+        const modal = document.getElementById('tracking-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initScrollMotion();
+        renderCatalog();
+        initColorMatcher();
+        initSizeGuide();
+        initHampersBuilder();
+        renderCart();
+        renderTrackingData('KT-2026-8891');
+
+        document.querySelectorAll('.cat-pill').forEach((pill) => {
+          pill.addEventListener('click', () => {
+            state.category = pill.dataset.category;
+            document.querySelectorAll('.cat-pill').forEach((p) => {
+              const active = p === pill;
+              p.className = active
+                ? 'cat-pill tactile-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-taupe-deep text-white cursor-pointer'
+                : 'cat-pill tactile-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-ivory hover:bg-ivory-warm text-taupe-deep border border-hairline cursor-pointer';
+            });
+            renderCatalog();
+          });
+        });
+
+        const dSearch = document.getElementById('desktop-search');
+        const mSearch = document.getElementById('mobile-search');
+        dSearch.addEventListener('input', (e) => {
+          state.search = e.target.value;
+          mSearch.value = e.target.value;
+          renderCatalog();
+        });
+        mSearch.addEventListener('input', (e) => {
+          state.search = e.target.value;
+          dSearch.value = e.target.value;
+          renderCatalog();
+        });
+
+        document.getElementById('sort-select').addEventListener('change', (e) => {
+          state.sort = e.target.value;
+          renderCatalog();
+        });
+
+        document.getElementById('btn-reset-filter').addEventListener('click', () => {
+          state.category = 'Semua';
+          state.search = '';
+          dSearch.value = '';
+          mSearch.value = '';
+          document.querySelector('.cat-pill[data-category="Semua"]').click();
+        });
+
+        document.getElementById('close-product-modal').addEventListener('click', () => {
+          const m = document.getElementById('product-modal');
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+        });
+
+        document.getElementById('modal-add-cart-btn').addEventListener('click', () => {
+          const prod = state.activeModalProduct;
+          if (!prod) return;
+          const color = prod.colors[state.activeModalColorIdx] || prod.colors[0];
+          addToCart({ id: prod.id, name: prod.name, color: color.name, price: prod.price });
+        });
+
+        document.getElementById('modal-btn-drape').addEventListener('click', () => {
+          openDrapeModal(state.activeModalProduct ? state.activeModalProduct.material : 'Ceruty Babydoll');
+        });
+
+        document.getElementById('btn-hero-drape').addEventListener('click', () => openDrapeModal('Ceruty Babydoll'));
+        document.getElementById('close-drape-modal').addEventListener('click', closeDrapeModal);
+        document.querySelectorAll('.drape-fabric-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.drapeFabric = btn.dataset.fabric;
+            updateDrapeFabricUI();
+          });
+        });
+
+        document.getElementById('wind-slider').addEventListener('input', (e) => {
+          state.drapeWind = Number(e.target.value);
+          const labels = ['Tenang', 'Sepoi', 'Lembut', 'Sedang', 'Kencang'];
+          document.getElementById('wind-label').textContent = labels[Math.min(4, Math.floor((state.drapeWind - 1) / 2))];
+        });
+
+        document.getElementById('btn-open-cart').addEventListener('click', () => document.getElementById('cart-drawer').classList.remove('hidden'));
+        document.getElementById('close-cart-btn').addEventListener('click', () => document.getElementById('cart-drawer').classList.add('hidden'));
+        document.getElementById('cart-backdrop').addEventListener('click', () => document.getElementById('cart-drawer').classList.add('hidden'));
+        document.getElementById('checkout-region').addEventListener('change', updateCheckoutTotals);
+
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+          e.preventDefault();
+          if (state.cart.length === 0) return;
+
+          const name = document.getElementById('checkout-name').value.trim();
+          const regionSelect = document.getElementById('checkout-region');
+          const regionLabel = regionSelect.options[regionSelect.selectedIndex].text.split(' —')[0];
+          const payment = (document.querySelector('input[name="payment-method"]:checked') || {}).value || 'QRIS Instan';
+          const newResi = `KT-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+          TRACKING_DB[newResi] = {
+            resi: newResi,
+            status: 'Pesanan Dibuat',
+            recipient: `${name} (${regionLabel})`,
+            courier: `KalaTeduh Express • ${payment}`,
+            steps: [
+              { time: 'Baru saja', title: 'Pesanan masuk & siap diproses' },
+              { time: 'Baru saja', title: `Metode pembayaran: ${payment}` }
+            ]
+          };
+
+          state.cart = [];
+          renderCart();
+          document.getElementById('cart-drawer').classList.add('hidden');
+          e.target.reset();
+          showToast('Pesanan Berhasil', `Resi: ${newResi}`);
+          openTrackingModal(newResi);
+        });
+
+        document.getElementById('btn-open-tracking').addEventListener('click', () => openTrackingModal());
+        document.getElementById('footer-track-btn').addEventListener('click', () => openTrackingModal());
+        document.getElementById('close-tracking-modal').addEventListener('click', () => {
+          const m = document.getElementById('tracking-modal');
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+        });
+        document.getElementById('btn-search-resi').addEventListener('click', () => {
+          renderTrackingData(document.getElementById('resi-input').value);
+        });
+
+        const waPopup = document.getElementById('wa-popup');
+        document.getElementById('btn-wa-float').addEventListener('click', () => waPopup.classList.toggle('hidden'));
+        document.getElementById('close-wa-popup').addEventListener('click', () => waPopup.classList.add('hidden'));
+      });
+    })();
+  </script>
+</body>
+</html>
